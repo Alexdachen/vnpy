@@ -82,7 +82,8 @@ class TrendFollowingStrategy(StrategyTemplate):
         """
         Callback of new tick data update.
         """
-        self.bg.update_tick(tick)
+        if tick.vt_symbol == self.vt_symbo:
+            self.bg.update_tick(tick)
 
     def on_bar(self, bar: BarData):
         """
